@@ -1,0 +1,50 @@
+<ion-content>
+  <ion-slides pager="true" [options]=""slideOpt>
+  
+  
+  <ion-slide class="{{slide.class}}" *ngFor="let slide of slides">
+    <ion-icon name="close" (click)="finish()"></ion-icon>
+  <h1>{{slide.title}}</h1>
+  <img src={{slide.img}} alt=""> 
+  <p>
+   {{slide.description}}
+  </p>
+  </ion-slide>
+  
+  <!-- <ion-slide class="slide1" *ngFor="let slide of slides">
+  <h1>Biblioteca Digital</h1>
+  <img src="assets/1.png" alt="libro"> 
+  <div class="parrafos">
+  <p>
+   Aquí tienes tu biblioteca digital
+  </p>
+  <p class="parrafo1">Bienvenid@!</p>
+  </div>
+  </ion-slide> -->
+  
+  <!-- <ion-slide class="slide2">
+  <h1>Biblioteca Digital</h1>
+  <img src="assets/2.png" width="80" height="80" alt="libro2">
+  <p>Encuentra todos los libros que desees de forma gratuita</p>
+  </ion-slide>
+  
+  <ion-slide class="slide3">
+  <h1>Biblioteca Digital</h1>
+  <img src="assets/3.png" alt="libro3">
+  <p>Puedes guardar libros para leerlos cuando quieras</p>
+  </ion-slide>
+  
+  <ion-slide class="slide4">
+  <h1>Biblioteca Digital</h1>
+  <img src="assets/4.png" alt="libro4">
+  <div>
+    <p>Toda la biblioteca digital en tu celular solo dando un click
+    </p>
+    <!- <ion-button>Vamos a leer!</ion-button>
+  <!- </div> -->
+  
+  <!-- </ion-slide> -->
+  
+  </ion-slides>
+  
+  </ion-content>

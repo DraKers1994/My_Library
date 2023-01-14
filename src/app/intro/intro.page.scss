@@ -1,0 +1,73 @@
+ion-content{
+    --background: blue;
+  }
+  
+  
+  ion-slides{
+    background-color: var(--ion-color-kers3);
+    height: 100%;
+    max-width: 800px;
+    --bullet-background-active : var(--ion-color-kers2);
+  }
+  .swiper-slide{
+    display:block;
+    background-color: var(--ion-color-kers3);
+    margin: bottom 60px;
+    padding: 20px 0px 20px 0px;
+    margin: 20px 0px 20px 0px;
+  }
+  ion-slide >h1,h2{
+    color: var(--ion-color-kers2);
+    font-weight: 600;
+    font-size: 30px;
+  }
+  
+  ion-slide > p {
+    font-style: serif;
+    font-size: 22px;
+    padding: 20px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+  }
+  
+  ion-slide > ion-icon[name="close"]{
+    float: right;
+    color: var(--ion-color-kers4);
+    font-size: 25px;
+  
+  }
+  
+  .slide1{
+    background-color: var(--ion-color-kers3);
+    color:  var(--ion-color-kers5);
+    font-style: monospace;
+    height: 100%;
+    max-width: 800px;
+  
+  }
+  
+  .slide2{
+    background-color: var(--ion-color-kers3);
+    color: var(--ion-color-kers1);
+    font-style: italic;
+    height: 100%;
+    max-width: 800px;
+  
+  }
+  
+  .slide3{
+    background-color: var(--ion-color-kers3);
+    color: var(--ion-color-kers1);
+    font-style: serif;
+    height: 100%;
+    max-width: 800px;
+  
+  }
+  
+  .slide4{
+    background-color: var(--ion-color-kers3);
+    color: var(--ion-color-kers1);
+    font-style: monospace;
+    height: 100%;
+    max-width: 800px;
+  
+  }

@@ -13,7 +13,12 @@ export class LoginPage implements OnInit {
     email:[
       {type: "required", message: "El email es Obligatorio"},
       {type:"patter", message: "Tu email no es valido"}
+    ],
+    password:[
+      {type: "required", message: "La password es Obligatoria"},
+
     ]
+    
   }
 
   constructor(private formBuilder: FormBuilder) { 
@@ -29,7 +34,7 @@ export class LoginPage implements OnInit {
         "", 
         Validators.compose([
           Validators.required,
-          Validators.minLength(5)
+          Validators.minLength(5),
         ])
       )
 

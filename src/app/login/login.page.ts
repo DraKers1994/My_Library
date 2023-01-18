@@ -12,10 +12,10 @@ export class LoginPage implements OnInit {
   validation_message = {
     email:[
       {type: "required", message: "El email es Obligatorio"},
-      {type:"patter", message: "Tu email no es valido"}
+      {type:"pattern", message: "Tu email no es valido"}
     ],
     password:[
-      {type: "required", message: "La password es Obligatoria"},
+      {type: "required", message: "La contraseña es Obligatoria"},
 
     ]
     
@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
         "", 
         Validators.compose([
           Validators.required,
-          Validators.minLength(5),
+          Validators.minLength(5)
         ])
       )
 

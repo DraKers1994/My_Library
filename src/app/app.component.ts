@@ -9,7 +9,7 @@ import { Storage }from '@ionic/storage-angular';
 export class AppComponent {
   constructor(private storage:Storage) {}
 
-  async ng0nInit(){
+  async ngOnInit(){
     await this.storage.create();
   }
 }

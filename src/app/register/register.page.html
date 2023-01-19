@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Register</ion-title>
+    <ion-buttons>
+      <ion-button (click)="goToLogin()">
+        Back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<figure class="size-logo">
+  <img src="./assets/1.png" alt=""/>
+</figure>
+<form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input placeholder="Enter text" formControlName="name"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Apellido</ion-label>
+    <ion-input placeholder="Enter text" formControlName="last_name"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Tipo documento</ion-label>
+    <ion-select placeholder="Selecciona el tipo de documento">
+      <ion-select-option value="CC">Cedula de ciudadania</ion-select-option>
+      <ion-select-option value="CE">Cedula de extranjeria</ion-select-option>
+      <ion-select-option value="TI ">Tarjeta de identidad</ion-select-option>
+      <ion-select-option value="PS ">Pasaporte</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Numero documento</ion-label>
+    <ion-input placeholder="Enter text" formControlName="document_number"> </ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Carrera</ion-label>
+    <ion-input placeholder="Enter text" formControlName="career"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input placeholder="Enter text" formControlName="email"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Contraseña</ion-label>
+    <ion-input type="password" formControlName="password"></ion-input>
+  </ion-item>
+
+  <ion-button 
+shape="full"
+color="warning"
+type="submit">
+  Registrarse
+</ion-button>
+
+</form>
+
+</ion-content>

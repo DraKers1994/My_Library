@@ -26,7 +26,7 @@
 
     <ion-item fill="solid">
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input formControlName="password"></ion-input>
+      <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
 
    <div>
@@ -51,15 +51,16 @@ type="submit">
 
 
   </form>
+
+{{ errorMessage }}
 </ion-content>
 <ion-footer>
   <ion-toolbar>
       <div class="ion-text-center">
         <p>No tienes una cuenta?</p>
-          <ion-button 
+          <ion-button (click) ="goToRegister()"
           shape="full"
           color="warning"
-          [disabled]="!loginForm.valid"
           type="submit">
             Registrate
           </ion-button>

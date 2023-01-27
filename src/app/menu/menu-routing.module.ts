@@ -20,6 +20,10 @@ const routes: Routes = [
         path: 'books',
         loadChildren: () => import('../books/books.module').then( m => m.BooksPageModule)
       },
+      {
+        path: 'favorite-books',
+        loadChildren: () => import('../favorite-books/favorite-books.module').then( m => m.FavoriteBooksPageModule)
+      },
     ]
   }
 ];

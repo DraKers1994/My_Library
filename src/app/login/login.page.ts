@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticateService } from '../services/authenticate.service';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -28,7 +28,8 @@ export class LoginPage implements OnInit {
   constructor(private formBuilder: FormBuilder,
      private authenticate: AuthenticateService,
      private navCtrl: NavController,
-     private storage: Storage) { 
+     private storage: Storage,
+     private alertController: AlertController) { 
     this.loginForm= this.formBuilder.group({
       email: new FormControl(
         "",
@@ -58,13 +59,24 @@ export class LoginPage implements OnInit {
 
   loginUser(credentials: any){
     console.log(credentials);
-    this.authenticate.loginUser(credentials).then(res =>{
-      this.errorMessage = "";
+    this.authenticate.loginUser(credentials).then((res: any) =>{
       this.storage.set("isUserLoggedIn", true);
+      this.storage.set("user_id", res.user.id)
       this.navCtrl.navigateForward("/menu/home")
     }).catch(error => {
-      this.errorMessage = error
+      this.presentAlert("Opps", "Hubo un error", error)
     });
+  }
+
+  async presentAlert(header: any, subHeader: any, message: any){
+    const alert = await this.alertController.create({
+      header: header,
+      subHeader: subHeader,
+      message: message,
+      buttons: ['ok']
+    })
+    await alert.present();
+
   }
 
 }

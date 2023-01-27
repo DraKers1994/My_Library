@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authenticate.service';
+import { AlertController } from '@ionic/angular'
 
 @Component({
   selector: 'app-register',
@@ -41,7 +42,8 @@ export class RegisterPage implements OnInit {
 
   constructor(private navCtrl: NavController, 
     private formBuilder: FormBuilder,
-    private authenticate: AuthenticateService) { 
+    private authenticate: AuthenticateService,
+    private alertController: AlertController) { 
 
     this.registerForm = this.formBuilder.group({
       name: new FormControl(
@@ -76,7 +78,6 @@ export class RegisterPage implements OnInit {
         "",
         Validators.compose([
           Validators.required,
-          Validators.minLength(5),
         ])
       ),
       email: new FormControl(
@@ -107,7 +108,20 @@ export class RegisterPage implements OnInit {
     console.log(register_form)
     this.authenticate.registerUser(register_form).then(() =>{
       this.navCtrl.navigateForward("/login")
+    }).catch(er =>{
+      this.presentAlert("Opps", "Hubo un error", er)
     })
+  }
+
+  async presentAlert(header: any, subHeader: any, message: any){
+    const alert = await this.alertController.create({
+      header: header,
+      subHeader: subHeader,
+      message: message,
+      buttons: ['ok']
+    })
+    await alert.present();
+
   }
 
 }

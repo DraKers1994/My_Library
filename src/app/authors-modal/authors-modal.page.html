@@ -12,12 +12,12 @@
 
 <ion-content>
 <ion-list>
-  <ion-item *ngFor="let book of books">
+  <ion-item *ngFor="let author of authors">
     <ion-avatar slot="start">
-      <img src="{{book.cover}}" alt/>
+      <img src="{{author.name}}" alt/>
     </ion-avatar>
     
-    <ion-label>{{book.name}}</ion-label>
+    <ion-label>{{author.name}}</ion-label>
   </ion-item>
 </ion-list>
 </ion-content>

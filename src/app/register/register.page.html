@@ -26,11 +26,10 @@
   
   <ion-item>
     <ion-label position="floating">Tipo documento</ion-label>
-    <ion-select placeholder="Selecciona el tipo de documento" formControlName="document_type">
-      <ion-select-option value="CC">Cedula de ciudadania</ion-select-option>
-      <ion-select-option value="CE">Cedula de extranjeria</ion-select-option>
-      <ion-select-option value="TI ">Tarjeta de identidad</ion-select-option>
-      <ion-select-option value="PS ">Pasaporte</ion-select-option>
+    <ion-select formControlName="document_type">
+      <ion-select-option *ngFor ="let item of ListDocumentType" value="item.type">
+        {{item.display}}
+      </ion-select-option>
     </ion-select>
   </ion-item>
   
@@ -41,11 +40,10 @@
   
   <ion-item>
     <ion-label position="floating">Carrera</ion-label>
-    <ion-select placeholder="Selecciona la carrera" formControlName="career">
-      <ion-select-option value="Ing.Sistemas"> Ingenieria de sistemas</ion-select-option>
-      <ion-select-option value="Ing.Mecanica">Ingenieria mecanica</ion-select-option>
-      <ion-select-option value="Ing.Electronica">Ingenieria electrica</ion-select-option>
-      <ion-select-option value="Ing.Industrial">Ingenieria industrial</ion-select-option>
+    <ion-select formControlName="career">
+      <ion-select-option *ngFor = "let item of ListCareer" value="item.type">
+        {{item.display}}
+      </ion-select-option>
     </ion-select>
   </ion-item>
   

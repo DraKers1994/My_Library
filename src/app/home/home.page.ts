@@ -29,7 +29,7 @@ export class HomePage {
 
     this.libraryService.getAuthors().then (res => {
       this.authors = res;
-      console.log(this.authors)
+      this.libraryService.authors = res;
     })
 
     this.booksOff = this.libraryService.getBooksOffline();
@@ -38,7 +38,6 @@ export class HomePage {
   }
 
   async showBooks(author: any){
-    let book_list: any;
     const modal = await this.modalController.create({
       component: BooksModalPage,
       componentProps:{
@@ -63,5 +62,10 @@ export class HomePage {
   goToMyFavorites(){
     this.navCtrl.navigateForward("/menu/favorite-books")
     this.menu.close()
+  }
+
+  goToTopBooks(){
+    this.navCtrl.navigateForward("/menu/top-books");
+    this.menu.close();
   }
 }

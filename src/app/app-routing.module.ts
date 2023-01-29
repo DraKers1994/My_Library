@@ -6,7 +6,7 @@ import { LoginGuard } from './guards/login.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'menu/home', //cmb menu/home
+    redirectTo: 'intro', //cmb menu/home
     pathMatch: 'full'
   },
   {
@@ -28,7 +28,8 @@ const routes: Routes = [
   {
     path: 'books-modal',
     loadChildren: () => import('./books-modal/books-modal.module').then( m => m.BooksModalPageModule)
-  },  {
+  },
+  {
     path: 'authors-modal',
     loadChildren: () => import('./authors-modal/authors-modal.module').then( m => m.AuthorsModalPageModule)
   },
@@ -36,6 +37,7 @@ const routes: Routes = [
     path: 'book-detail-modal',
     loadChildren: () => import('./book-detail-modal/book-detail-modal.module').then( m => m.BookDetailModalPageModule)
   },
+
 
 
 

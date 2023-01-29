@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar>
+    <ion-title class="ion-text-center">Biblioteca</ion-title>
     <ion-buttons slot="end">
       <ion-menu-button> </ion-menu-button>
     </ion-buttons>
@@ -7,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <p class="ion-text-center ion-text-uppercase">Hola soy el home</p>
+  <p class="ion-text-center ion-text-uppercase">Biblioteca Digital</p>
 
   <ion-slides [options]="slideOps">
     <ion-slide *ngFor="let author of authors">
@@ -53,7 +54,7 @@
         </ion-card>
       </ion-col>
       <ion-col size="6">
-        <ion-card color="primary">
+        <ion-card color="primary" (click)="goToTopBooks()">
           <ion-card-header>
             <ion-card-title>Top 10</ion-card-title>
           </ion-card-header>

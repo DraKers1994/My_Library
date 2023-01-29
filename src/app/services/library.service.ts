@@ -10,6 +10,9 @@ export class LibraryService {
   urlServer = "https://librarypca.fly.dev/";
   httpHeaders = { headers: new HttpHeaders({"Content-Type": "application/json"}) };
 
+  authors: any; //add
+
+
   constructor( private http: HttpClient) { }
 
   getAuthors() {
@@ -63,6 +66,16 @@ export class LibraryService {
     }
     return this.http.post(`${this.urlServer}dislike`,params, this.httpHeaders)
 
+  }
+
+  getAuthorData(author_name: any){
+    return fetch(`https://openlibrary.org/search/authors.json?q=${author_name}`).then(
+      author => author.json()
+    );
+  }
+
+  GetListTopBooks(){
+    return fetch(`https://librarypca.fly.dev/top_books`).then(list => list.json())
   }
 
 

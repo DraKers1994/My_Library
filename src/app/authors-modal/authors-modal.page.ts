@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController, NavParams } from '@ionic/angular';
+import { ModalController, NavController, NavParams } from '@ionic/angular';
 import { AnyMxRecord } from 'dns';
 import { LibraryService } from '../services/library.service';
 
@@ -10,25 +10,24 @@ import { LibraryService } from '../services/library.service';
 })
 export class AuthorsModalPage implements OnInit {
 
-  author: any;
-  authors: any;
+  filterAuthors : any;
 
   constructor(private libraryService: LibraryService,
   private modalController: ModalController,
   private navParams: NavParams) { }
 
   ngOnInit() {
-    // this.libraryService.getAuthors(this.author.author.id).then(authors=> {
-    //   this.authors = authors;
-    // })
-  }
-
-  ionViewDidEnter(){
-    this.author = this.navParams.get("author");
-    console.log(this.author.id)
+    this.getAuthorData();
   }
 
   closeModal(){
     this.modalController.dismiss();
+  }
+
+  getAuthorData(){
+    this.filterAuthors = this.libraryService.authors.filter((a : any) => 
+    a.id === this.navParams.get("authorId"))[0]
+    console.log(this.filterAuthors)
+
   }
 }

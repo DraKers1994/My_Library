@@ -15,7 +15,8 @@
 
   <ion-list>
 
-      <ion-item *ngFor="let book of listTopBooks" class="fontRoboto">
+    <ion-item *ngFor="let book of listTopBooks" class="fontRoboto"
+     (click)="showBook(book)">
           <!-- <ion-icon class="colum1" name="book-sharp"></ion-icon> -->
           <ion-label class="colum1">{{book.name}}</ion-label>
           <ion-label>Likes:{{book.likes}}</ion-label>

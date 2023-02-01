@@ -50,21 +50,18 @@ export class RegisterPage implements OnInit {
         "",
         Validators.compose([
           Validators.required,
-          Validators.minLength(5),
         ])
       ),
       last_name: new FormControl(
         "",
         Validators.compose([
           Validators.required,
-          Validators.minLength(5),
         ])
       ),
       document_type: new FormControl(
         "",
         Validators.compose([
           Validators.required,
-          Validators.minLength(5),
         ])
       ),
       document_number: new FormControl(
